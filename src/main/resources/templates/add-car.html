@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-5">
+    <h3> Add Car</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form action="#" th:action="@{/save}" th:object="${car}" method="post">
+                    <div class="row">
+<!--                        <div class="form-group col-md-8">-->
+<!--                            <label for="id" class="col-form-label">Id</label> <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="Id"> <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="text-danger"></span>-->
+<!--                        </div>-->
+                        <div class="form-group col-md-8">
+                            <label for="mark" class="col-form-label">Mark</label> <input type="text" th:field="*{mark}" class="form-control" id="mark" placeholder="Mark"> <span th:if="${#fields.hasErrors('mark')}" th:errors="*{mark}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="model" class="col-form-label">Model</label> <input type="text" th:field="*{model}" class="form-control" id="model" placeholder="Model"> <span th:if="${#fields.hasErrors('model')}" th:errors="*{model}" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-8">
+                            <label for="color" class="col-form-label">Color</label> <input type="text" th:field="*{color}" class="form-control" id="color" placeholder="Color"> <span th:if="${#fields.hasErrors('color')}" th:errors="*{color}" class="text-danger"></span>
+                        </div>
+
+                        <div class="col-md-6">
+<!--                            <input type="submit" class="btn btn-primary" value="Add Car">-->
+                            <button type="submit" class="btn btn-primary" name="action" value="save">Add Car</button>
+                            <button type="submit" class="btn btn-secondary" name="action" value="cancel">Cancel</button>
+                        </div>
+
+                        <div class="form-group col-md-8"></div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
